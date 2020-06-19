@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='manifest' href='/manifest.json'>
+    <title>Map Covid-19</title>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="data/separado.geojson"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <style type="text/css">
+    #groupMap {
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #map {
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 420px;
+            width: 600px;
+        }
+        
+        #sect {
+            display: flex;
+            justify-items: auto;
+            align-items: auto;
+        }
+    }
+    #cases {
+        color: white;
+    }
+    .legend {
+        background: none;
+        line-height: 1.5em;
+        color: darkgrey
+    }
+    .legend i {
+        width: 5em;
+        float: left
+    }
+    .myDiv {
+        background-color: rgb(37, 37, 37);
+        text-align: center;
+        align-content: center;
+    }
+    .chart_set {
+        color: white;
+        text-align: center;
+        margin: auto;
+        height: 520px;
+        width: 600px;
+    }
+    footer {
+        text-align: center;
+        color: whitesmoke;
+        margin-top: 100px;
+        align-items: center;
+    }
+    </style>
+
+</head>
+
+<body style="background-color:rgb(37, 37, 37);">
+
+
+    <div class="myDiv">
+        <h1 style="color: white;">Casos Covid-19 - Estado do Rio de Janeiro</h1>
+
+    </div>
+
+    <div id='sect'>
+        <div id="groupMap">
+            <h2 style="color: white;"> Municípios agrupados em Microrregiões:</h2>
+            <h3 style="color: whitesmoke;">Bacia de São João, Campos dos Goytacazes, Lagos e Macaé</h3>
+            <div id="map"></div>
+        </div>
+
+        <div id='cases'>
+
+        </div>
+
+        <div name="chart_test" class="chart_set">
+            <h3 id="h3label"></h3>
+            <canvas id="chart" width="800" height="800"></canvas>
+
+
+
+            <br>
+
+
+        </div>
+    </div>
+
+
+    <script src="../chart.js"></script>
+    <script import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate'></script>;
+    <script type="module">
+        const el = document.createElement('pwa-update'); document.body.appendChild(el);
+    </script>
+
+    <script src="../bundle.js"></script>
+
+</body>
+<footer>
+
+    <p style="font-size: smaller;"><span style="color: rgb(38, 147, 190);">[</span>Dados atualizados diariamente
+        <span style="color: rgb(38, 147, 190);">]</span><br>
+
+        <a style="color: rgb(38, 147, 190);" href="https://covid.saude.gov.br/"><b>Fonte</b></a>: Ministério da Saúde/Secretarias Estaduais e Municipais de Saúde.
+    </p>
+    <p><b>@2020</b><br>
+        <a style="color: rgb(38, 147, 190);" href="mailto:danielfbrg@gmail.com"><b>danielfbrg@gmail.com</b></a></p>
+</footer>
+
+</html>

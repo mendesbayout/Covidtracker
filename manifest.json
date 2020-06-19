@@ -1,0 +1,6 @@
+{
+    "name": "Covid Tracker",
+    "short_name": "Covid19 Track",
+    "description": "Tracker of COVID cases spread thorough Região dos lagos - Rj.",
+    "start_url": "Index.html"
+}
